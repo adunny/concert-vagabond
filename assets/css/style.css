@@ -1,0 +1,26 @@
+* {
+    margin: 0;
+    padding: 0;
+    }
+    body{
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+    }
+header{
+    width: 100%;
+    height: 200px;
+    background-image: linear-gradient(#546EDA, #BEF74D);
+}
+
+header, img{
+    height: 200px;
+    text-align: center;
+}
+    
+footer{
+    background-image: linear-gradient( #BEF74D, #546EDA);
+    width: 100%;
+    height: 75px;
+    margin-top: auto;
+}
