@@ -1,5 +1,7 @@
 var searchInputEl = $("#search-input");
 var searchButtonEl = $("#search-btn");
+let modal = document.querySelector(".modal");
+let closeBtn = document.querySelector(".close-btn");
 
 searchButtonEl.click(function(){
     artist = searchInputEl.val()
@@ -14,7 +16,7 @@ function getAttractionInfo() {
             response.json().then(function(data){
                 if(data.page.totalElements === 0){
                     // this needs to be a modal instead of an alert window
-                    alert("No results found.")
+                    modal.style.display = "block";
                 }else{
                 displayAttraction(data);
                 getArtistInfo(artist);
@@ -54,3 +56,7 @@ function displayAttraction(concertInfo){
     <a href="${concertInfo._embedded.events[1].url}">Get Tickets</a></p>`)  
     
 };
+
+closeBtn.onclick = function(){
+    modal.style.display = "none"
+  }
