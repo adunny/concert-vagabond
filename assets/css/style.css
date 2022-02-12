@@ -51,7 +51,7 @@ header, div{
 .bg-image{
     width: 100%;
     min-height: 800px;
-    /* opacity: .4;  */
+    /* opacity: .4; */
     position: relative;
     background-image: url(../imgages/main-background.png);
     
