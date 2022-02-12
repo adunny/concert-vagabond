@@ -1,66 +1,68 @@
 * {
     margin: 0;
     padding: 0;
-    }
-    body{
-        min-height: 100vh;
-        display: flex;
-        flex-direction: column;
-    }
-header{
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
     width: 100%;
     height: 200px;
     background-image: linear-gradient(#546EDA, #BEF74D);
-    border-bottom: 5px black solid ;
+    border-bottom: 5px black solid;
 }
 
-header, div{
+header,
+div {
     display: inline-block;
     text-align: center;
-   
+
 }
 
-/* header, img{
-    height: 200px;
-    
-} */
 
-.header-img{
+.header-img {
     height: 200px;
 }
-.concert-top, .concert {
-   
+
+.concert-top,
+.concert {
+
     font-size: 95px;
-    color: rgb(220,145,63);
+    color: rgb(220, 145, 63);
     padding: 20px;
     font-family: 'Bungee Shade', cursive;
 
 }
-.concert-top{
+
+.concert-top {
     position: relative;
     bottom: 127px;
-    text-decoration: underline, 
+    text-decoration: underline,
 }
-.concert{
+
+.concert {
     position: relative;
     bottom: 13px;
-  
+
 }
 
 
-.bg-image{
+.bg-image {
     width: 100%;
     min-height: 800px;
     position: relative;
-    background-image: linear-gradient(rgba(255,255,255,0.4), rgba(255,255,255,0.4)),url(../imgages/main-background.png);
-    
-    
+    background-image: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url(../imgages/main-background.png);
+    position: relative;
+    background-image: url(../imgages/main-background.png);
 }
-main{
-    
-}
-    
-.copyright{
+
+
+
+.copyright {
     font-size: 35px;
     position: relative;
     top: 15px;
@@ -68,41 +70,41 @@ main{
 }
 
 /* replace with flex  */
-.ru{
+.ru {
     float: right;
-    color:#cd0033;
+    color: #cd0033;
 }
-footer{
-    background-image: linear-gradient( #BEF74D, #546EDA);
+
+footer {
+    background-image: linear-gradient(#BEF74D, #546EDA);
     width: 100%;
     height: 75px;
     margin-top: auto;
-    border-top:solid 5px black;
+    border-top: solid 5px black;
 }
 
 .modal {
     display: none;
-    position: fixed; 
+    position: fixed;
     padding-top: 50px;
-    left: 0; 
+    left: 0;
     top: 0;
     width: 100%;
-    height: 100%; 
+    height: 100%;
     background-color: rgb(0, 0, 0);
     background-color: rgba(0, 0, 0, 0.5);
-  }
+}
 
-  .modal-content {
-    position: relative; 
-    background-color: white;
-    padding: 20px; 
-    margin: auto; 
-    width: 30%;  
-    text-align: center;
-    
-  }
-
-  .close-btn {
-    font-size: 15px;  
+.modal-content {
     position: relative;
-  }
+    background-color: white;
+    padding: 20px;
+    margin: auto;
+    width: 30%;
+    text-align: center;
+}
+
+.close-btn {
+    font-size: 15px;
+    position: relative;
+}
