@@ -47,9 +47,6 @@ footer{
   }
 
   .close-btn {
-    /* float: right;  */
-    /* color: lightgray;  */
     font-size: 15px;  
-    /* font-weight: bold; */
     position: relative;
   }
