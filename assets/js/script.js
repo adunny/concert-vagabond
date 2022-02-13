@@ -1,12 +1,24 @@
 var searchInputEl = $("#search-input");
 var searchButtonEl = $("#search-btn");
-let modal = document.querySelector(".modal");
-let closeBtn = document.querySelector(".close-btn");
+var modal = document.querySelector(".modal");
+var closeBtn = document.querySelector(".close-btn");
+var artistSearchEl = $("#artist-search");
+var searchedAritist = [];
 
-searchButtonEl.click(function(){
+searchButtonEl.click(function(event){
+    event.preventDefault();
     artist = searchInputEl.val()
     getAttractionInfo(artist);
+
+    search = document.createElement("li");
+    search.innerHTML = "<a href='#'>" + artist + "</a>"; 
+    artistSearchEl.append(search);
     
+    searchedAritist.push(artist);
+
+    localStorage.setItem("searchedArtist", JSON.stringify(searchedAritist));
+    //clear input
+    searchInputEl.value = "";
 });
 
 function getAttractionInfo() {
@@ -20,7 +32,7 @@ function getAttractionInfo() {
                 }else{
                 displayAttraction(data);
                 getArtistInfo(artist);
-                console.log(data)
+                // console.log(data)
                 }
             });
         };
@@ -32,7 +44,7 @@ function getArtistInfo(){
     fetch(apiUrl).then(function(response){
         if (response.ok){
             response.json().then(function(data){
-                console.log(data);
+                // console.log(data);
                 displayArtistInfo(data);
             })
         }
@@ -59,4 +71,26 @@ function displayAttraction(concertInfo){
 
 closeBtn.onclick = function(){
     modal.style.display = "none"
-  }
+};
+
+function displayArtistSearch(){
+    
+    var storedArtist = JSON.parse(localStorage.getItem("searchedArtist"));
+    
+    if (storedArtist === null){
+        return;
+    }else{
+
+        for (var i = 0; i < storedArtist.length; i++) {
+            search = document.createElement("li");
+            search.innerHTML = "<a href='#'>" + storedArtist[i] + "</a>";
+
+            artistSearchEl.append(search);
+        }
+       
+        // artistSearchEl.append(artistList);
+    }
+   
+}
+
+displayArtistSearch();

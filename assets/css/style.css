@@ -37,12 +37,12 @@ header, div{
 
 }
 .concert-top{
-    position: relative;
+    /* position: relative; */
     bottom: 127px;
     text-decoration: underline, 
 }
 .concert{
-    position: relative;
+    /* position: relative; */
     bottom: 13px;
   
 }
@@ -52,7 +52,7 @@ header, div{
     width: 100%;
     min-height: 800px;
     /* opacity: .4;  */
-    position: relative;
+    /* position: relative; */
     background-image: url(../imgages/main-background.png);
     
 }
