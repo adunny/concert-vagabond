@@ -34,12 +34,12 @@ header, div{
 
 }
 .concert-top{
-    position: relative;
+    /* position: relative; */
     bottom: 127px;
     text-decoration: underline, 
 }
 .concert{
-    position: relative;
+    /* position: relative; */
     bottom: 13px;
   
 }
