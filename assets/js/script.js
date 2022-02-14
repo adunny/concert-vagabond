@@ -18,7 +18,7 @@ searchButtonEl.click(function(event){
 
     localStorage.setItem("searchedArtist", JSON.stringify(searchedAritist));
     //clear input
-    searchInputEl.value = "";
+    searchInputEl.val("");
 });
 
 function getAttractionInfo() {
