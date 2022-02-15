@@ -1,11 +1,12 @@
 var searchInputEl = $("#search-input");
 var searchButtonEl = $("#search-btn");
+var searchFormEl = $("#search-form")
 var modal = document.querySelector(".modal");
 var closeBtn = document.querySelector(".close-btn");
 var artistSearchEl = $("#artist-search");
 var searchedAritist = [];
 
-searchButtonEl.click(function(event){
+searchFormEl.submit(function(event){
     event.preventDefault();
     artist = searchInputEl.val()
     getAttractionInfo(artist);
