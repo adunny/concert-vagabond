@@ -15,7 +15,7 @@ header{
 }
 
 header, div{
-    display: inline-block;
+    /* display: inline-block; */
     text-align: center;
    
 }
