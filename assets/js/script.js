@@ -12,7 +12,7 @@ searchFormEl.submit(function(event){
     getAttractionInfo(artist);
 
     search = document.createElement("li");
-    search.innerHTML = "<a href='#'>" + artist + "</a>"; 
+    search.innerHTML = "<a href='#' class='collection-item'>" + artist + "</a>"; 
     artistSearchEl.append(search);
     
     searchedAritist.push(artist);
@@ -62,24 +62,34 @@ function getArtistInfo(artist){
 
 function displayArtistInfo(artistInfo){
     var artistName = artistInfo.search.data.artists[0].name
-    $("#artist-info").html(`<h2>${artistName}</h2>
+    $("#artist-info").html(`<h3 class='orange-text text-lighten-2'>${artistName}</h3>
     <img src="https://api.napster.com/imageserver/v2/artists/${artistInfo.search.data.artists[0].id}/images/230x153.jpg">`)
 
 };
 
 function displayAttraction(concertInfo){
     var cityName = concertInfo._embedded.events[0]._embedded.venues[0].city.name
-    $("#artist-concerts").html(`<h3>Upcoming Concerts:</h3> 
-    <p>${concertInfo._embedded.events[0].dates.start.localDate} ${concertInfo._embedded.events[0].name} in ${cityName} - 
+    $("#artist-concerts").html(`
+    <div class='row'>
+    <div class='col s12'>
+    <div class='card orange lighten-2'>
+    <div class='card-content white-text'>
+    <h3>Upcoming Concerts:</h3> 
+    <p class='left-align'>${concertInfo._embedded.events[0].dates.start.localDate} ${concertInfo._embedded.events[0].name} in ${cityName} - 
     <a href="${concertInfo._embedded.events[0].url}">Get Tickets</a></p>
-    <p>${concertInfo._embedded.events[1].dates.start.localDate} ${concertInfo._embedded.events[1].name} in ${concertInfo._embedded.events[1]._embedded.venues[0].city.name} -
+    <p class='left-align'>${concertInfo._embedded.events[1].dates.start.localDate} ${concertInfo._embedded.events[1].name} in ${concertInfo._embedded.events[1]._embedded.venues[0].city.name} -
     <a href="${concertInfo._embedded.events[1].url}">Get Tickets</a></p>
-    <p>${concertInfo._embedded.events[2].dates.start.localDate} ${concertInfo._embedded.events[2].name} in ${concertInfo._embedded.events[2]._embedded.venues[0].city.name} - 
+    <p class='left-align'>${concertInfo._embedded.events[2].dates.start.localDate} ${concertInfo._embedded.events[2].name} in ${concertInfo._embedded.events[2]._embedded.venues[0].city.name} - 
     <a href="${concertInfo._embedded.events[2].url}">Get Tickets</a></p>
-    <p>${concertInfo._embedded.events[3].dates.start.localDate} ${concertInfo._embedded.events[3].name} in ${concertInfo._embedded.events[3]._embedded.venues[0].city.name} - 
+    <p class='left-align'>${concertInfo._embedded.events[3].dates.start.localDate} ${concertInfo._embedded.events[3].name} in ${concertInfo._embedded.events[3]._embedded.venues[0].city.name} - 
     <a href="${concertInfo._embedded.events[3].url}">Get Tickets</a></p>
-    <p>${concertInfo._embedded.events[4].dates.start.localDate} ${concertInfo._embedded.events[4].name} in ${concertInfo._embedded.events[4]._embedded.venues[0].city.name} - 
-    <a href="${concertInfo._embedded.events[4].url}">Get Tickets</a></p>`)  
+    <p class='left-align'>${concertInfo._embedded.events[4].dates.start.localDate} ${concertInfo._embedded.events[4].name} in ${concertInfo._embedded.events[4]._embedded.venues[0].city.name} - 
+    <a href="${concertInfo._embedded.events[4].url}">Get Tickets</a></p>
+    </div>
+    </div>
+    </div>
+    </div>
+    `)  
 };
 
 closeBtn.onclick = function(){
@@ -96,7 +106,7 @@ function displayArtistSearch(){
 
         for (var i = 0; i < storedArtist.length; i++) {
             search = document.createElement("li");
-            search.innerHTML = "<a href='#'>" + storedArtist[i] + "</a>";
+            search.innerHTML = "<a href='#' class='collection-item'>" + storedArtist[i] + "</a>";
 
             artistSearchEl.append(search);
         }
