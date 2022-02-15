@@ -73,13 +73,12 @@ function displayAttraction(concertInfo){
     <a href="${concertInfo._embedded.events[0].url}">Get Tickets</a></p>
     <p>${concertInfo._embedded.events[1].dates.start.localDate} ${concertInfo._embedded.events[1].name} in ${concertInfo._embedded.events[1]._embedded.venues[0].city.name} -
     <a href="${concertInfo._embedded.events[1].url}">Get Tickets</a></p>
-    <p>${concertInfo._embedded.events[2].dates.start.localDate} ${concertInfo._embedded.events[0].name} in ${cityName} - 
+    <p>${concertInfo._embedded.events[2].dates.start.localDate} ${concertInfo._embedded.events[2].name} in ${concertInfo._embedded.events[2]._embedded.venues[0].city.name} - 
     <a href="${concertInfo._embedded.events[2].url}">Get Tickets</a></p>
-    <p>${concertInfo._embedded.events[3].dates.start.localDate} ${concertInfo._embedded.events[0].name} in ${cityName} - 
+    <p>${concertInfo._embedded.events[3].dates.start.localDate} ${concertInfo._embedded.events[3].name} in ${concertInfo._embedded.events[3]._embedded.venues[0].city.name} - 
     <a href="${concertInfo._embedded.events[3].url}">Get Tickets</a></p>
-    <p>${concertInfo._embedded.events[4].dates.start.localDate} ${concertInfo._embedded.events[0].name} in ${cityName} - 
+    <p>${concertInfo._embedded.events[4].dates.start.localDate} ${concertInfo._embedded.events[4].name} in ${concertInfo._embedded.events[4]._embedded.venues[0].city.name} - 
     <a href="${concertInfo._embedded.events[4].url}">Get Tickets</a></p>`)  
-    
 };
 
 closeBtn.onclick = function(){
