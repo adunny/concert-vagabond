@@ -21,7 +21,7 @@ searchButtonEl.click(function(event){
     searchInputEl.val("");
 });
 
-function getAttractionInfo() {
+function getAttractionInfo(artist) {
     var apiUrl = "https://app.ticketmaster.com/discovery/v2/events.json?keyword=" + artist + "&apikey=7oZcdUQaTEQX8dezNz2rq0vTFbDBmIoE"
     fetch(apiUrl).then(function(response){
         if (response.ok){
@@ -41,7 +41,7 @@ function getAttractionInfo() {
     });
 };
 
-function getArtistInfo(){
+function getArtistInfo(artist){
     var apiUrl = "https://api.napster.com/v2.2/search?query=" + artist + "&type=artist&apikey=NGRhNzQ5MWEtZTUxNS00Mjk5LTk0YTYtYTI1YTMwN2ZkMGUw"
     fetch(apiUrl).then(function(response){
         if (response.ok){
@@ -106,3 +106,11 @@ function displayArtistSearch(){
 }
 
 displayArtistSearch();
+
+var artistSaved = function(event) {
+    var artist = event.target.innerText;
+    getAttractionInfo(artist);
+}
+
+
+artistSearchEl.click(artistSaved);
