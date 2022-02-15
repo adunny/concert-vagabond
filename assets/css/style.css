@@ -4,8 +4,8 @@
     }
     body{
         min-height: 100vh;
-        display: flex;
-        flex-direction: column;
+        /* display: flex;
+        flex-direction: column; */
     }
 header{
     width: 100%;
@@ -15,7 +15,7 @@ header{
 }
 
 header, div{
-    display: inline-block;
+    /* display: inline-block; */
     text-align: center;
    
 }
