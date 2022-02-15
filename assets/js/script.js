@@ -18,7 +18,7 @@ searchButtonEl.click(function(event){
 
     localStorage.setItem("searchedArtist", JSON.stringify(searchedAritist));
     //clear input
-    searchInputEl.value = "";
+    searchInputEl.val("");
 });
 
 function getAttractionInfo() {
@@ -26,13 +26,15 @@ function getAttractionInfo() {
     fetch(apiUrl).then(function(response){
         if (response.ok){
             response.json().then(function(data){
-                if(data.page.totalElements === 0){
-                    // this needs to be a modal instead of an alert window
+                if(data.page.totalElements === 0 || data.page.totalElements > 100){
                     modal.style.display = "block";
-                }else{
+                }else if (searchInputEl.val()){
+                    alert("please enter an artist")
+                }
+                else{
                 displayAttraction(data);
                 getArtistInfo(artist);
-                // console.log(data)
+                console.log(data)
                 }
             });
         };
@@ -48,6 +50,11 @@ function getArtistInfo(){
                 displayArtistInfo(data);
             })
         }
+        if (response.status === 400){
+            throw new Error('bad request')
+        }
+    }).catch(function(error){
+        console.log(error)
     })
 
 };
@@ -65,7 +72,13 @@ function displayAttraction(concertInfo){
     <p>${concertInfo._embedded.events[0].dates.start.localDate} ${concertInfo._embedded.events[0].name} in ${cityName} - 
     <a href="${concertInfo._embedded.events[0].url}">Get Tickets</a></p>
     <p>${concertInfo._embedded.events[1].dates.start.localDate} ${concertInfo._embedded.events[1].name} in ${concertInfo._embedded.events[1]._embedded.venues[0].city.name} -
-    <a href="${concertInfo._embedded.events[1].url}">Get Tickets</a></p>`)  
+    <a href="${concertInfo._embedded.events[1].url}">Get Tickets</a></p>
+    <p>${concertInfo._embedded.events[2].dates.start.localDate} ${concertInfo._embedded.events[0].name} in ${cityName} - 
+    <a href="${concertInfo._embedded.events[2].url}">Get Tickets</a></p>
+    <p>${concertInfo._embedded.events[3].dates.start.localDate} ${concertInfo._embedded.events[0].name} in ${cityName} - 
+    <a href="${concertInfo._embedded.events[3].url}">Get Tickets</a></p>
+    <p>${concertInfo._embedded.events[4].dates.start.localDate} ${concertInfo._embedded.events[0].name} in ${cityName} - 
+    <a href="${concertInfo._embedded.events[4].url}">Get Tickets</a></p>`)  
     
 };
 
