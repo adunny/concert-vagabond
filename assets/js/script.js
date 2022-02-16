@@ -12,7 +12,7 @@ searchFormEl.submit(function(event){
     getAttractionInfo(artist);
 
     search = document.createElement("li");
-    search.innerHTML = "<a href='#'>" + artist + "</a>"; 
+    search.innerHTML = "<a href='#' class='collection-item'>" + artist + "</a>"; 
     artistSearchEl.append(search);
     
     searchedAritist.push(artist);
@@ -98,7 +98,7 @@ function displayArtistSearch(){
 
         for (var i = 0; i < storedArtist.length; i++) {
             search = document.createElement("li");
-            search.innerHTML = "<a href='#'>" + storedArtist[i] + "</a>";
+            search.innerHTML = "<a href='#' class='collection-item'>" + storedArtist[i] + "</a>";
 
             artistSearchEl.append(search);
         }
