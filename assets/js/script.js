@@ -63,7 +63,7 @@ function displayArtistInfo(artistInfo){
     var artistName = artistInfo.search.data.artists[0].name
     $("#artist-info").html(`<h2>${artistName}</h2>
     <img src="https://api.napster.com/imageserver/v2/artists/${artistInfo.search.data.artists[0].id}/images/230x153.jpg">`)
-
+  
 };
 
 function displayAttraction(concertInfo){
@@ -84,4 +84,26 @@ function displayAttraction(concertInfo){
 
 closeBtn.onclick = function(){
     modal.style.display = "none"
-  }
+};
+
+function displayArtistSearch(){
+    
+    var storedArtist = JSON.parse(localStorage.getItem("searchedArtist"));
+    
+    if (storedArtist === null){
+        return;
+    }else{
+
+        for (var i = 0; i < storedArtist.length; i++) {
+            search = document.createElement("li");
+            search.innerHTML = "<a href='#'>" + storedArtist[i] + "</a>";
+
+            artistSearchEl.append(search);
+        }
+       
+        // artistSearchEl.append(artistList);
+    }
+   
+}
+
+displayArtistSearch();

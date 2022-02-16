@@ -1,111 +1,52 @@
-* {
-    margin: 0;
-    padding: 0;
-    }
-    body{
-        min-height: 100vh;
-        display: flex;
-        flex-direction: column;
-    }
-header{
-    width: 100%;
-    height: 18.6vh;
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+  main {
+    flex: 1 0 auto;
+  }
+  .bg-image{
+    
+    background-image: linear-gradient(rgba(255, 255, 255, .8), rgba(255, 255, 255, .8) ), url(../imgages/main-background.png);
+    background-size: cover;
+    position: relative;
+    top:20px
+  }
+  
+nav{
+
     background-image: linear-gradient(#546EDA, #BEF74D);
     border-bottom: 5px black solid ;
-    padding-top: 2px;
-}
-
-header, div{
-    display: inline-block;
-    text-align: center;
-   
-}
-
-
-.header-img{
-    height: 18.7vh;
-}
-.concert-top, .concert {
-   
-    font-size: 95px;
-    color: rgb(220,145,63);
-    padding: 20px;
-    font-family: 'Bungee Shade', cursive;
-
-}
-.concert-top{
-    /* position: relative; */
-    bottom: 127px;
-    text-decoration: underline, 
-}
-.concert{
-    /* position: relative; */
-    bottom: 13px;
-  
-}
-
-
-.bg-image{
-    height: 75vh;
-    position: relative;
-    background-image: linear-gradient(rgba(255, 255, 255, .6), rgba(255, 255, 255, .6) ), url(../imgages/main-background.png);
-    background-size: cover;
-}
-main{
-    border-left: 5px solid black;
-    border-right: 5px solid black;
-    width:100%;
-}
     
-.copyright{
-    font-size: 35px;
-    position: relative;
-    top: 15px;
-    font-family: 'Bungee Inline', cursive;
 }
 
-/* replace with flex  */
-.ru{
-    float: right;
-    color:#cd0033;
+.logo{
+    color: #cd0033;
+    font-family: 'Bungee Shade', cursive;
+ 
 }
-
-#search-form{
-    position: absolute;
-    left: 300px;
-    bottom: 630px;
-    font-weight: bold;
-}
-
-#artist-info{
-    position: relative;
-    left: 850px;
-    top: 150px;
-    border: solid #a5a5a5 3px;
-}
-
-#artist-concerts{
-    position: relative;
-    left: 1050px;
-    top: 30px;
-    border-bottom: solid #a5a5a5 3px;
-   
-}
-
-
-
-
-
-
-
 
 footer{
     background-image: linear-gradient( #BEF74D, #546EDA);
-    width: 100%;
-    height: 7vh;
-    margin-top: auto;
-    border-top:solid 5px black;
+    border-top: solid black 5px;
+    font-size: 1rem;
 }
+  .left-text{
+      color: #cd0033;
+      
+  }
+
+  .right-text{
+      color: 
+      #cd0033;
+  }
+
+  .right-text, .left-text{
+    font-size: 35px;
+    font-family: 'Bungee Inline', cursive;
+  }
 
 .modal {
     display: none;
@@ -132,3 +73,33 @@ footer{
     font-size: 15px;  
     position: relative;
   }
+
+.search-btn{
+    border: 2px solid #4CAF50;
+    background-color: transparent;
+    color: #4CAF50;
+    padding: 10px 28px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 256ms all;
+    border-radius: 20px;
+}
+  
+.btn {
+    
+    width: 150px;
+    background: linear-gradient(90deg, #FFFF00 6%, #FFA500 25%, #F14444 45%, #D53567 55%, #9A109A 94%);
+    text-align: center;
+    padding: 13px 20px;
+    color: #fff;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: rgba(255,255,255,0.001);
+  }
+  
+
+  #artist-info, #artist-concerts, span{
+      color: #cd0033;
+      text-align: center;
+      font-size: 2rem;
+  }  
