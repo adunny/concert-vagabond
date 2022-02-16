@@ -64,7 +64,7 @@ function displayArtistInfo(artistInfo){
     var artistName = artistInfo.search.data.artists[0].name
     $("#artist-info").html(`<h2>${artistName}</h2>
     <img src="https://api.napster.com/imageserver/v2/artists/${artistInfo.search.data.artists[0].id}/images/230x153.jpg">`)
-
+  
 };
 
 function displayAttraction(concertInfo){
