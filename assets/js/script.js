@@ -67,18 +67,31 @@ function displayArtistInfo(artistInfo){
 };
 
 function displayAttraction(concertInfo){
-    var cityName = concertInfo._embedded.events[0]._embedded.venues[0].city.name
-    $("#artist-concerts").html(`<h3>Upcoming Concerts:</h3> 
-    <p>${concertInfo._embedded.events[0].dates.start.localDate} ${concertInfo._embedded.events[0].name} in ${cityName} - 
-    <a href="${concertInfo._embedded.events[0].url}">Get Tickets</a></p>
-    <p>${concertInfo._embedded.events[1].dates.start.localDate} ${concertInfo._embedded.events[1].name} in ${concertInfo._embedded.events[1]._embedded.venues[0].city.name} -
-    <a href="${concertInfo._embedded.events[1].url}">Get Tickets</a></p>
-    <p>${concertInfo._embedded.events[2].dates.start.localDate} ${concertInfo._embedded.events[2].name} in ${concertInfo._embedded.events[2]._embedded.venues[0].city.name} - 
-    <a href="${concertInfo._embedded.events[2].url}">Get Tickets</a></p>
-    <p>${concertInfo._embedded.events[3].dates.start.localDate} ${concertInfo._embedded.events[3].name} in ${concertInfo._embedded.events[3]._embedded.venues[0].city.name} - 
-    <a href="${concertInfo._embedded.events[3].url}">Get Tickets</a></p>
-    <p>${concertInfo._embedded.events[4].dates.start.localDate} ${concertInfo._embedded.events[4].name} in ${concertInfo._embedded.events[4]._embedded.venues[0].city.name} - 
-    <a href="${concertInfo._embedded.events[4].url}">Get Tickets</a></p>`)  
+    var concertListContainer = document.createElement("ul");
+    var concertListEl = "";
+    $("#artist-concerts").empty();
+    for (var i = 0; i < 5; i++){   
+        var cityName = concertInfo._embedded.events[i]._embedded.venues[0].city.name
+        var concertDate = concertInfo._embedded.events[i].dates.start.localDate
+        var concertName = concertInfo._embedded.events[i].name
+        var ticketUrl = concertInfo._embedded.events[i].url
+        concertListEl += `<li class="card horizontal"><p class="card-content">${concertDate} ${concertName} in ${cityName}</p> 
+        <a class="waves-effect waves-light btn" href="${ticketUrl}">Tickets</a></li>`
+
+    }
+    concertListContainer.innerHTML = concertListEl
+    $("#artist-concerts").append(concertListContainer);
+    // $("#artist-concerts").html(`<ul>Upcoming Concerts: 
+    // <li class="card horizontal"><p class="card-content">${concertInfo._embedded.events[0].dates.start.localDate} ${concertInfo._embedded.events[0].name} in ${cityName}</p> 
+    // <a class="waves-effect waves-light btn" href="${concertInfo._embedded.events[0].url}">Tickets</a></li>
+    // <li class="card horizontal"><p class="card-content">${concertInfo._embedded.events[1].dates.start.localDate} ${concertInfo._embedded.events[1].name} in ${concertInfo._embedded.events[1]._embedded.venues[0].city.name}</p>
+    // <a class="card-action" href="${concertInfo._embedded.events[1].url}">Get Tickets</a></li>
+    // <li class="card horizontal"><p class="card-content">${concertInfo._embedded.events[2].dates.start.localDate} ${concertInfo._embedded.events[2].name} in ${concertInfo._embedded.events[2]._embedded.venues[0].city.name}</p>
+    // <a class="card-action" href="${concertInfo._embedded.events[2].url}">Get Tickets</a></li>
+    // <li class="card horizontal"><p class="card-content">${concertInfo._embedded.events[3].dates.start.localDate} ${concertInfo._embedded.events[3].name} in ${concertInfo._embedded.events[3]._embedded.venues[0].city.name}</p> 
+    // <a class="card-action" href="${concertInfo._embedded.events[3].url}">Get Tickets</a></li>
+    // <li class="card horizontal"><p class="card-content">${concertInfo._embedded.events[4].dates.start.localDate} ${concertInfo._embedded.events[4].name} in ${concertInfo._embedded.events[4]._embedded.venues[0].city.name}</p>
+    // <a class="card-action" href="${concertInfo._embedded.events[4].url}">Get Tickets</a></li></ul>`)  
 };
 
 closeBtn.onclick = function(){

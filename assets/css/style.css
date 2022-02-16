@@ -8,17 +8,18 @@
         flex-direction: column;
     }
 header{
-    width: 100%;
+    max-width: 100%;
+    margin: 0;
     height: 200px;
     background-image: linear-gradient(#546EDA, #BEF74D);
     border-bottom: 5px black solid ;
 }
 
-header, div{
+/* header, div{
     display: inline-block;
     text-align: center;
    
-}
+} */
 
 /* header, img{
     height: 200px;
@@ -26,11 +27,15 @@ header, div{
 } */
 
 .header-img{
-    height: 200px;
+    height: 195px;
+    border-radius: 30%;
+}
+.concert-top {
+    margin-right: 100px;
 }
 .concert-top, .concert {
    
-    font-size: 95px;
+    font-size: 75px;
     color: rgb(220,145,63);
     padding: 20px;
     font-family: 'Bungee Shade', cursive;
@@ -48,14 +53,14 @@ header, div{
 }
 
 
-.bg-image{
+/* .bg-image{
     width: 100%;
     min-height: 800px;
-    /* opacity: .4;  */
-    /* position: relative; */
+    opacity: .4; 
+    position: relative;
     background-image: url(../imgages/main-background.png);
     
-}
+} */
 main{
     border-left: 5px solid black;
     border-right: 5px solid black;
@@ -65,7 +70,7 @@ main{
     font-size: 35px;
     position: relative;
     top: 15px;
-    font-family: 'Bungee Inline', cursive;
+    /* font-family: 'Bungee Inline', cursive; */
 }
 
 /* replace with flex  */
