@@ -1,71 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/css/style.css">
-    <title>Concert Vagabond</title>
+       <title>Concert Vagabond</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bungee+Shade&family=Licorice&family=Roboto:wght@100&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bungee+Shade&family=Licorice&family=Roboto:wght@100&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 </head>
+
 <body>
     <!-- JUMBOTRON -->
     <!-- possibly need to be smaller? -->
-<header>
-    <div class="concert-top">CONCERT</div>
-    <div class="bungy">
-        <img class="header-img" src="./assets/imgages/logo.jpg" alt="">
-    </div>
-    
-    <div class="concert">VAGABOND</div>
+   
+    <header>
+        <nav class="nav-extended" >
+            <div class="nav-wrapper"width="250">
+              <a  class="center brand-logo"><span class="logo">Concert⭐Vagabond</span></a>
+            </div>
+          </nav>
+        
+          
+            
+        
+    </header>
 
-  
+    <!-- MAIN -->
+    <main class="bg-image">
+        <div class="container">
+            <div class="row">
+                <div class="center col s12 m6 l4">
+                    <div>
+                        <form id="search-form">
+                            <label for="artist"><span id="search">Search Artist</span> </label>
+                            <input id="search-input" type="text">
+                            <button id="search-btn" class="btn" type="submit">Search</button>
+                        </form>
+                    </div>
+                    <div>
+                        <ul id="artist-search" class="collection"></ul>
+                    </div>
+                </div>
+                <div class="col s12 m6 l4">
+                    <div class="card">
+                <div id="artist-info" class="card-image"></div>
+            </div>
+                </div>
+                <div id="artist-concerts" class="col s12 m12 l4"></div>
+            
+            </div>
 
-</header>
-<!-- MAIN -->
-<main class="bg-image">
 
-<div class="row">
-    <div class="col s6">
-        <div>
-            <form id="search-form">
-                <label for="artist">Search Artist</label>
-                <input id="search-input" type="text">
-                <button id="search-btn" type="submit">Search</button>
-            </form>
+
+            <!-- <img src="./assets/imgages/main-background.png" alt=""> -->
+
+            <div class="modal">
+                <div class="modal-content">
+                    <p>Invalid artist name. Please try again.</p>
+                    <button class="close-btn">Close</button>
+                </div>
+            </div>
+
         </div>
-        <div >
-            <ul id="artist-search"></ul>
+    </main>
+    <!-- FOOTER -->
+
+    <footer class=" lime page-footer">
+        
+        <div class="row">
+          <div class="col l6 s12">
+            <h5 class="right-text">&copy 2022 Concert Vagabond Inc.</h5>
+          </div>
+          <div class="row">
+              <div class=" col l6 s12">
+                <h5 class="right-align left-text">Rutgers Coding Bootcamp</h5>
+              </div>
+              
+            </div>
         </div>
-    </div>
-
-
-    <div id="artist-info" class="col s3"></div>
-    <div id="artist-concerts" class="col s3"></div>
-
-</div>
-
-
-  
-   <!-- <img src="./assets/imgages/main-background.png" alt=""> -->
+      
+      
+    </footer>
     
-<div class="modal">
-    <div class="modal-content">
-      <p>Invalid artist name. Please try again.</p>
-      <button class="close-btn">Close</button>
-    </div>
-  </div>
-
-</main>
-<!-- FOOTER -->
-<footer>
-<div class="copyright">&copy 2022 Concert Vagabond Inc. </div> <div class="copyright ru">Rutgers Coding Bootcamp</div>
-</footer>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script src="./assets/js/script.js" defer></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+      <script src="./assets/js/script.js" defer></script>        
 </body>
+
 </html>
