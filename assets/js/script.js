@@ -77,7 +77,7 @@ function displayAttraction(concertInfo){
         var concertName = concertInfo._embedded.events[i].name
         var ticketUrl = concertInfo._embedded.events[i].url
         concertListEl += `<li class="card horizontal"><p class="card-content">${concertDate} ${concertName} in ${cityName}</p> 
-        <a class="waves-effect waves-light btn" href="${ticketUrl}">Tickets</a></li>`
+        <a class="waves-effect waves-light btn ticket" href="${ticketUrl}">Tickets</a></li>`
 
     }
     concertListContainer.innerHTML = concertListEl
