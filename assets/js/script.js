@@ -1,11 +1,12 @@
 var searchInputEl = $("#search-input");
 var searchButtonEl = $("#search-btn");
+var searchFormEl = $("#search-form");
 var modal = document.querySelector(".modal");
 var closeBtn = document.querySelector(".close-btn");
 var artistSearchEl = $("#artist-search");
 var searchedAritist = [];
 
-searchButtonEl.click(function(event){
+searchFormEl.submit(function(event){
     event.preventDefault();
     artist = searchInputEl.val()
     getAttractionInfo(artist);
@@ -80,18 +81,7 @@ function displayAttraction(concertInfo){
 
     }
     concertListContainer.innerHTML = concertListEl
-    $("#artist-concerts").append(concertListContainer);
-    // $("#artist-concerts").html(`<ul>Upcoming Concerts: 
-    // <li class="card horizontal"><p class="card-content">${concertInfo._embedded.events[0].dates.start.localDate} ${concertInfo._embedded.events[0].name} in ${cityName}</p> 
-    // <a class="waves-effect waves-light btn" href="${concertInfo._embedded.events[0].url}">Tickets</a></li>
-    // <li class="card horizontal"><p class="card-content">${concertInfo._embedded.events[1].dates.start.localDate} ${concertInfo._embedded.events[1].name} in ${concertInfo._embedded.events[1]._embedded.venues[0].city.name}</p>
-    // <a class="card-action" href="${concertInfo._embedded.events[1].url}">Get Tickets</a></li>
-    // <li class="card horizontal"><p class="card-content">${concertInfo._embedded.events[2].dates.start.localDate} ${concertInfo._embedded.events[2].name} in ${concertInfo._embedded.events[2]._embedded.venues[0].city.name}</p>
-    // <a class="card-action" href="${concertInfo._embedded.events[2].url}">Get Tickets</a></li>
-    // <li class="card horizontal"><p class="card-content">${concertInfo._embedded.events[3].dates.start.localDate} ${concertInfo._embedded.events[3].name} in ${concertInfo._embedded.events[3]._embedded.venues[0].city.name}</p> 
-    // <a class="card-action" href="${concertInfo._embedded.events[3].url}">Get Tickets</a></li>
-    // <li class="card horizontal"><p class="card-content">${concertInfo._embedded.events[4].dates.start.localDate} ${concertInfo._embedded.events[4].name} in ${concertInfo._embedded.events[4]._embedded.venues[0].city.name}</p>
-    // <a class="card-action" href="${concertInfo._embedded.events[4].url}">Get Tickets</a></li></ul>`)  
+    $("#artist-concerts").append(concertListContainer);  
 };
 
 closeBtn.onclick = function(){
