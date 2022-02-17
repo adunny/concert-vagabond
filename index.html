@@ -13,6 +13,7 @@
         href="https://fonts.googleapis.com/css2?family=Bungee+Shade&family=Licorice&family=Roboto:wght@100&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
 </head>
 
 <body>
@@ -70,11 +71,20 @@
                 </div>
 
             </div> -->
-            <div id="modal1" class="modal">
+            <!-- <div id="modal1" class="modal">
                 <div class="modal-content">
                     <div class="modal-text hide-on-med-and-down"> <p>Invalid artist name. Please try again.</p></div>
                     <div class="modal-text s.how-on-medium-and-down"> <p>Try again.</p></div>
                     <button class="close-btn">Close</button>
+              </div> -->
+              <div class="modal">
+                <div class="modal-content" scroll="no" style="overflow: hidden">
+                    <img  class="modal-img" src="./assets/imgages/logo.jpg"  class="modal-img" alt="">
+                    <div class="mdoal-space">
+                        <p class="modal-text">Invalid artist name. Please try again.</p>
+                        <button class="close-btn">Close</button>
+                    </div>
+                 
               </div>
         </div>
     </main>
