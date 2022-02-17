@@ -10,16 +10,7 @@ searchFormEl.submit(function(event){
     event.preventDefault();
     artist = searchInputEl.val()
     getAttractionInfo(artist);
-
-    search = document.createElement("li");
-    search.innerHTML = "<a href='#' class='collection-item'>" + artist + "</a>"; 
-    artistSearchEl.append(search);
-    
-    searchedAritist.push(artist);
-
-    localStorage.setItem("searchedArtist", JSON.stringify(searchedAritist));
-    //clear input
-    searchInputEl.val("");
+    saveArtists(artist)
 });
 
 function getAttractionInfo(artist) {
@@ -29,8 +20,6 @@ function getAttractionInfo(artist) {
             response.json().then(function(data){
                 if(data.page.totalElements === 0 || data.page.totalElements > 100){
                     modal.style.display = "block";
-                }else if (searchInputEl.val()){
-                    alert("please enter an artist")
                 }
                 else{
                 displayAttraction(data);
@@ -87,6 +76,24 @@ function displayAttraction(concertInfo){
 closeBtn.onclick = function(){
     modal.style.display = "none"
 };
+
+function saveArtists(artist){
+    search = document.createElement("li");
+    if (searchInputEl.val() === "") {
+        return;
+    } 
+    else {
+    
+    search.innerHTML = "<a href='#' class='collection-item'>" + artist + "</a>"; 
+    artistSearchEl.append(search);
+    
+    searchedAritist.push(artist);
+
+    localStorage.setItem("searchedArtist", JSON.stringify(searchedAritist));
+    //clear input
+    // searchInputEl.val("");
+  }
+}
 
 function displayArtistSearch(){
     
