@@ -84,6 +84,7 @@ footer{
     font-size: 2rem;  
     position: relative;
     top: 8vh;
+    width: 1rem auto;
   }
 
 .search-btn{
@@ -120,10 +121,11 @@ footer{
       background-color:
       #d2d2d2;
       }
-      
+
 .ticket{
     position: relative;
-    left: -1.px;
-    width: 9.5vw;
+    left: -1px;
+    width: 250px;
+    
 }
 
