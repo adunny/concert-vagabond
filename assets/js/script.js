@@ -7,7 +7,7 @@ var artistSearchEl = $("#artist-search");
 var searchedAritist = [];
 
 // function for search button
-searchFormEl.submit(function (event) {
+searchFormEl.submit(function(event) {
     event.preventDefault();
     artist = searchInputEl.val()
     getAttractionInfo(artist);
@@ -17,13 +17,12 @@ searchFormEl.submit(function (event) {
 // Get data from ticketmaster API
 function getAttractionInfo(artist) {
     var apiUrl = "https://app.ticketmaster.com/discovery/v2/events.json?keyword=" + artist + "&apikey=7oZcdUQaTEQX8dezNz2rq0vTFbDBmIoE"
-    fetch(apiUrl).then(function (response) {
+    fetch(apiUrl).then(function(response) {
         if (response.ok) {
-            response.json().then(function (data) {
+            response.json().then(function(data) {
                 if (data.page.totalElements === 0 || data.page.totalElements > 100) {
                     modal.style.display = "block";
-                }
-                else {
+                } else {
                     displayAttraction(data);
                     getArtistInfo(artist);
                     console.log(data)
@@ -36,16 +35,16 @@ function getAttractionInfo(artist) {
 //Get data from Napster API
 function getArtistInfo(artist) {
     var apiUrl = "https://api.napster.com/v2.2/search?query=" + artist + "&type=artist&apikey=NGRhNzQ5MWEtZTUxNS00Mjk5LTk0YTYtYTI1YTMwN2ZkMGUw"
-    fetch(apiUrl).then(function (response) {
+    fetch(apiUrl).then(function(response) {
         if (response.ok) {
-            response.json().then(function (data) {
+            response.json().then(function(data) {
                 displayArtistInfo(data);
             })
         }
         if (response.status === 400) {
             throw new Error('bad request')
         }
-    }).catch(function (error) {
+    }).catch(function(error) {
         console.log(error)
     })
 
@@ -74,11 +73,11 @@ function displayAttraction(concertInfo) {
 
     }
     concertListContainer.innerHTML = concertListEl
-    $("#artist-concerts").append(concertListContainer);  
+    $("#artist-concerts").append(concertListContainer);
 };
 
 //function to close modal
-closeBtn.onclick = function () {
+closeBtn.onclick = function() {
     modal.style.display = "none"
 };
 
@@ -87,8 +86,7 @@ function saveArtists(artist) {
     search = document.createElement("li");
     if (searchInputEl.val() === "") {
         return;
-    }
-    else {
+    } else {
 
         search.innerHTML = "<a href='#' class='collection-item'>" + artist + "</a>";
         artistSearchEl.append(search);
@@ -101,16 +99,16 @@ function saveArtists(artist) {
 }
 
 //function to get data from localstorage
-function displayArtistSearch(){
-    
+function displayArtistSearch() {
+
     var storedArtist1 = JSON.parse(localStorage.getItem("searchedArtist"));
-    var storedArtist2 =[];
-    if (storedArtist1 === null){
+    var storedArtist2 = [];
+    if (storedArtist1 === null) {
         return;
         // remove duplicates for local storage
-    }else{
-        for (var i=0; i<storedArtist1.length; i++) {
-            if(storedArtist2.indexOf(storedArtist1[i]) === -1){
+    } else {
+        for (var i = 0; i < storedArtist1.length; i++) {
+            if (storedArtist2.indexOf(storedArtist1[i]) === -1) {
                 storedArtist2.push(storedArtist1[i]);
             }
 
@@ -132,7 +130,7 @@ function displayArtistSearch(){
 displayArtistSearch();
 
 //function to make search list item functional
-var artistSaved = function (event) {
+var artistSaved = function(event) {
     var artist = event.target.innerText;
     getAttractionInfo(artist);
 }
