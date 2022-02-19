@@ -12,7 +12,7 @@ Simply enter your favorite artist/band into the search form to view their upcomi
 Clicking the ticket button next to a concert will redirect you to Ticketmaster's event page where you can purchase a ticket(s).
 
 
-![gif of website](https://media.giphy.com/media/7G2STwIfKV5Uq73dsM/giphy.gif)
+![gif of website](https://media.giphy.com/media/SGMzG4xYlO3bAXY3is/giphy.gif)
 
 ## Built With
 * HTML
