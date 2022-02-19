@@ -13,7 +13,7 @@ body {
     background-size: cover;
     position: relative;
     top:20px;
-    margin-top: 52px;
+    /* margin-top: 52px; */
   }
   
 nav{
@@ -38,6 +38,7 @@ footer{
     background-image: linear-gradient( #BEF74D, #546EDA);
     border-top: solid black 5px;
     font-size: 1rem;
+    z-index: 9999;
 }
   .left-text{
       color: #cd0033;
@@ -50,35 +51,62 @@ footer{
   }
 
   .right-text, .left-text{
-    font-size: 35px;
-    font-family: 'Bungee Inline', cursive;
+    font-size: 30px;
+    font-family: 'Bungee Shade', cursive;
   }
 
-.modal {
+/* .modal {
     display: none;
     z-index: 9999;
     position: fixed; 
-    padding-top: 50px;
+    padding-top: 10px;
     left: 0; 
     top: 0;
-    width: 100%;
-    height: 100%; 
-    background-color: rgb(0, 0, 0);
-    background-color: rgba(0, 0, 0, 0.5);
+    
+  } */
+
+  .modal-img {
+    opacity: 0.5;
+ 
   }
+.modal{
+    /* background: transparent !important;
+    position: relative; */
+    width: 30vw !important;
+    height: 60vh;
+
+ 
+}
+
+
 
   .modal-content {
-    position: relative; 
-    background-color: white;
-    padding: 20px; 
-    margin: auto; 
-    width: 30%;  
+   
+    height:  auto;
+    margin: 0; 
     text-align: center;
+
   }
 
+  .modal-text{
+      position: relative;
+      top: -20vh;
+      font-size: 2rem;
+      text-shadow: 1px 1px 2px #cd0033, 0 0 1em #dc913f, 0 0 0.2em rgb(8, 0, 0);
+
+  }
+  
+
   .close-btn {
-    font-size: 15px;  
-    position: relative;
+    font-size: 2rem;  
+    position: absolute;
+    width: 1rem auto;
+    position: absolute;
+    bottom: 13%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    
   }
 
 .search-btn{
@@ -92,9 +120,9 @@ footer{
     border-radius: 20px;
 }
   
-.btn {
+.btn, .close-btn{
     
-    width: 150px;
+    width: 25rem, auto;
     background: linear-gradient(90deg, #FFFF00 6%, #FFA500 25%, #F14444 45%, #D53567 55%, #9A109A 94%);
     text-align: center;
     padding: 13px 20px;
@@ -110,3 +138,28 @@ footer{
       text-align: center;
       font-size: 2rem;
   }  
+
+  #artist-info, #artist-concerts{
+      background-color:
+      #d2d2d2;
+      }
+
+.ticket{
+    position: relative;
+    left: -1px;
+    width: 250px;
+    
+}
+
+
+
+@media only screen and (min-device-width:280px) and (max-device-width:1280px){
+  .modal{
+     width: auto !important;
+     height: 70% !important;
+   }
+  .left-text, .right-text{
+    font-size: 20px !important;
+  }
+ }
+
