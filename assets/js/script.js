@@ -64,7 +64,7 @@ function displayAttraction(concertInfo) {
         var concertDate = concertInfo._embedded.events[i].dates.start.localDate
         var concertName = concertInfo._embedded.events[i].name
         var ticketUrl = concertInfo._embedded.events[i].url
-        concertListEl += `<li class="card horizontal"><p class="card-content">${concertDate} ${concertName} in ${cityName}</p> 
+        concertListEl += `<li class="card horizontal"><p class="card-content left-align">${concertDate} ${concertName} in ${cityName}</p> 
         <a class="waves-effect waves-light btn ticket" href="${ticketUrl}">Tickets</a></li>`
 
     }
