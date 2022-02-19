@@ -144,11 +144,11 @@ footer{
 }
 
 
-/* 
+
 @media only screen and (min-device-width:280px) and (max-device-width:1280px){
   .modal{
      width: auto !important;
-     height: auto !important;
+     height: 70% !important;
    }
- } */
+ }
 
