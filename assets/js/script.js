@@ -76,6 +76,23 @@ closeBtn.onclick = function () {
     modal.style.display = "none"
 };
 
+function saveArtists(artist) {
+    search = document.createElement("li");
+    if (searchInputEl.val() === "") {
+        return;
+    }
+    else {
+
+        search.innerHTML = "<a href='#' class='collection-item'>" + artist + "</a>";
+        artistSearchEl.append(search);
+
+        searchedAritist.push(artist);
+
+        localStorage.setItem("searchedArtist", JSON.stringify(searchedAritist));
+        searchInputEl.val("");
+    }
+}
+
 function displayArtistSearch(){
     
     var storedArtist1 = JSON.parse(localStorage.getItem("searchedArtist"));
