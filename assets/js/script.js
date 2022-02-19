@@ -6,6 +6,7 @@ var closeBtn = document.querySelector(".close-btn");
 var artistSearchEl = $("#artist-search");
 var searchedAritist = [];
 
+// function for search button
 searchFormEl.submit(function (event) {
     event.preventDefault();
     artist = searchInputEl.val()
@@ -13,6 +14,7 @@ searchFormEl.submit(function (event) {
     saveArtists(artist)
 });
 
+// Get data from ticketmaster API
 function getAttractionInfo(artist) {
     var apiUrl = "https://app.ticketmaster.com/discovery/v2/events.json?keyword=" + artist + "&apikey=7oZcdUQaTEQX8dezNz2rq0vTFbDBmIoE"
     fetch(apiUrl).then(function (response) {
@@ -31,6 +33,7 @@ function getAttractionInfo(artist) {
     });
 };
 
+//Get data from Napster API
 function getArtistInfo(artist) {
     var apiUrl = "https://api.napster.com/v2.2/search?query=" + artist + "&type=artist&apikey=NGRhNzQ5MWEtZTUxNS00Mjk5LTk0YTYtYTI1YTMwN2ZkMGUw"
     fetch(apiUrl).then(function (response) {
@@ -48,6 +51,7 @@ function getArtistInfo(artist) {
 
 };
 
+//function to display artist name and image
 function displayArtistInfo(artistInfo) {
     var artistName = artistInfo.search.data.artists[0].name
     $("#artist-info").html(`<h3>${artistName}</h3>
@@ -55,6 +59,7 @@ function displayArtistInfo(artistInfo) {
 
 };
 
+//function to display upcoming concert list
 function displayAttraction(concertInfo) {
     var concertListContainer = document.createElement("ul");
     var concertListEl = "";
@@ -72,10 +77,12 @@ function displayAttraction(concertInfo) {
     $("#artist-concerts").append(concertListContainer);  
 };
 
+//function to close modal
 closeBtn.onclick = function () {
     modal.style.display = "none"
 };
 
+//function to save to localstorage
 function saveArtists(artist) {
     search = document.createElement("li");
     if (searchInputEl.val() === "") {
@@ -93,6 +100,7 @@ function saveArtists(artist) {
     }
 }
 
+//function to get data from localstorage
 function displayArtistSearch(){
     
     var storedArtist1 = JSON.parse(localStorage.getItem("searchedArtist"));
@@ -123,6 +131,7 @@ function displayArtistSearch(){
 
 displayArtistSearch();
 
+//function to make search list item functional
 var artistSaved = function (event) {
     var artist = event.target.innerText;
     getAttractionInfo(artist);
