@@ -61,11 +61,11 @@ footer{
     opacity: 0.5;
  
   }
-.modal{
+/* .modal{
     background: transparent !important;
     position: relative;
  
-}
+} */
   .modal-content {
    
     height:  auto;
