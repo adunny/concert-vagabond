@@ -50,7 +50,7 @@ function getArtistInfo(artist) {
 
 function displayArtistInfo(artistInfo) {
     var artistName = artistInfo.search.data.artists[0].name
-    $("#artist-info").html(`<h3 class='orange-text text-lighten-2'>${artistName}</h3>
+    $("#artist-info").html(`<h3>${artistName}</h3>
     <img src="https://api.napster.com/imageserver/v2/artists/${artistInfo.search.data.artists[0].id}/images/230x153.jpg">`)
 
 };

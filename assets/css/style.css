@@ -13,7 +13,7 @@ body {
     background-size: cover;
     position: relative;
     top:20px;
-    margin-top: 52px;
+    /* margin-top: 52px; */
   }
   
 nav{
@@ -38,6 +38,7 @@ footer{
     background-image: linear-gradient( #BEF74D, #546EDA);
     border-top: solid black 5px;
     font-size: 1rem;
+    z-index: 9999;
 }
   .left-text{
       color: #cd0033;
@@ -50,8 +51,8 @@ footer{
   }
 
   .right-text, .left-text{
-    font-size: 35px;
-    font-family: 'Bungee Inline', cursive;
+    font-size: 30px;
+    font-family: 'Bungee Shade', cursive;
   }
 
 /* .modal {
@@ -157,5 +158,8 @@ footer{
      width: auto !important;
      height: 70% !important;
    }
+  .left-text, .right-text{
+    font-size: 20px !important;
+  }
  }
 
