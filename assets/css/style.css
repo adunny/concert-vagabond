@@ -13,7 +13,7 @@ body {
     background-size: cover;
     position: relative;
     top:20px;
-    margin-top: 52px;
+    /* margin-top: 52px; */
   }
   
 nav{
@@ -58,7 +58,7 @@ footer{
     display: none;
     z-index: 9999;
     position: fixed; 
-    padding-top: 50px;
+    padding-top: 10px;
     left: 0; 
     top: 0;
     

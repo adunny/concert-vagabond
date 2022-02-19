@@ -50,7 +50,7 @@ function getArtistInfo(artist) {
 
 function displayArtistInfo(artistInfo) {
     var artistName = artistInfo.search.data.artists[0].name
-    $("#artist-info").html(`<h2>${artistName}</h2>
+    $("#artist-info").html(`<h3>${artistName}</h3>
     <img src="https://api.napster.com/imageserver/v2/artists/${artistInfo.search.data.artists[0].id}/images/230x153.jpg">`)
 
 };
@@ -93,17 +93,26 @@ function saveArtists(artist) {
     }
 }
 
-function displayArtistSearch() {
-
-    var storedArtist = JSON.parse(localStorage.getItem("searchedArtist"));
-
-    if (storedArtist === null) {
+function displayArtistSearch(){
+    
+    var storedArtist1 = JSON.parse(localStorage.getItem("searchedArtist"));
+    var storedArtist2 =[];
+    if (storedArtist1 === null){
         return;
-    } else {
+        // remove duplicates for local storage
+    }else{
+        for (var i=0; i<storedArtist1.length; i++) {
+            if(storedArtist2.indexOf(storedArtist1[i]) === -1){
+                storedArtist2.push(storedArtist1[i]);
+            }
 
-        for (var i = 0; i < storedArtist.length; i++) {
+        }
+
+
+        for (var i = 0; i < storedArtist2.length; i++) {
             search = document.createElement("li");
-            search.innerHTML = "<a href='#' class='collection-item'>" + storedArtist[i] + "</a>";
+            search.innerHTML = "<a href='#' class='collection-item'>" + storedArtist2[i] + "</a>";
+
             artistSearchEl.append(search);
         }
 
